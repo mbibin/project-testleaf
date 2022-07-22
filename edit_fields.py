@@ -11,22 +11,16 @@ class OpenHomePage:
 
         driver.get("http://www.leafground.com/home.html")
         driver.maximize_window()
-        time.sleep(2)
         url = "pages/Edit.html"
         driver.find_element(By.XPATH, '//a[@href="'+url+'"]').click()
-        time.sleep(2)
         driver.find_element(By.ID, "email").send_keys("demotestfield@mail.com")
-        time.sleep(2)
         driver.find_element(By.XPATH, "//input[@value='Append ']").send_keys(" TestLeaf")
-        time.sleep(2)
-        defaultvalue = driver.find_element(By.XPATH, "//input[@value='TestLeaf']").get_attribute("value")
-        print(defaultvalue)
-        time.sleep(2)
+        default_value = driver.find_element(By.XPATH, "//input[@value='TestLeaf']").get_attribute("value")
+        assert default_value == "TestLeaf"
         driver.find_element(By.XPATH, "//input[@value='Clear me!!']").clear()
-        time.sleep(2)
-        isdisplayed = driver.find_element(By.XPATH, "//input[@disabled='true']").is_enabled()
-        print(isdisplayed)
-        time.sleep(2)
+        is_displayed = driver.find_element(By.XPATH, "//input[@disabled='true']").is_enabled()
+        assert is_displayed == False
+
 
 run = OpenHomePage()
 run.home_page()
