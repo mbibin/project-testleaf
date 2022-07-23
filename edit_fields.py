@@ -1,11 +1,10 @@
-import time
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
-class OpenHomePage:
-    def home_page(self):
+class EditFields:
+    def fields_types(self):
 
         driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -22,5 +21,5 @@ class OpenHomePage:
         assert is_displayed == False
 
 
-run = OpenHomePage()
-run.home_page()
+run = EditFields()
+run.fields_types()

@@ -1,11 +1,10 @@
-import time
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
-class OpenHomePage:
-    def home_page(self):
+class DifferentButtons:
+    def button_types(self):
 
         driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -23,5 +22,5 @@ class OpenHomePage:
         print(size)
 
 
-run = OpenHomePage()
-run.home_page()
+run = DifferentButtons()
+run.button_types()
